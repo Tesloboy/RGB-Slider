@@ -52,8 +52,17 @@ class ViewController: UIViewController {
         blueSlider.minimumTrackTintColor = .blue
     }
 
-
-    
+// MARK: View Action
+    @IBAction func redSliderViewAction(_ sender: Any) {
+        redLabel.text = String(Int(redSlider.value))
+    }
+    @IBAction func greenSliderViewAction(_ sender: Any) {
+        greenLabel.text = String(Int(greenSlider.value))
+    }
+    @IBAction func blueSliderViewAction(_ sender: Any) {
+        blueLabel.text = String(Int(blueSlider.value))
+    }
+ // MARK: Color Action
     
 }
 

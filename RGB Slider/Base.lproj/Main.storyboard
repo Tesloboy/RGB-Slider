@@ -72,12 +72,21 @@
                             </stackView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oG9-hu-7Vo">
                                 <rect key="frame" x="182" y="212" width="175" height="31"/>
+                                <connections>
+                                    <action selector="redSliderViewAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="ghJ-gs-gOf"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qmf-6g-aQs">
                                 <rect key="frame" x="182" y="262" width="175" height="31"/>
+                                <connections>
+                                    <action selector="greenSliderViewAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="EYQ-Kq-exK"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xc2-BI-O6i">
                                 <rect key="frame" x="182" y="312" width="175" height="31"/>
+                                <connections>
+                                    <action selector="blueSliderViewAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="h06-Nm-IBm"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
