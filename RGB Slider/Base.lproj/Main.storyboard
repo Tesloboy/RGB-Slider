@@ -107,6 +107,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u14-Xn-Zsk" secondAttribute="trailing" constant="16" id="tZP-y2-avh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueLabel" destination="a5J-dc-Jdr" id="yAT-Ip-aNH"/>
+                        <outlet property="blueSlider" destination="xc2-BI-O6i" id="HgN-gL-h99"/>
+                        <outlet property="greenLabel" destination="Fb6-W1-dQy" id="WWQ-CU-hmo"/>
+                        <outlet property="greenSlider" destination="qmf-6g-aQs" id="c67-EA-wc3"/>
+                        <outlet property="mainView" destination="u14-Xn-Zsk" id="U7l-BJ-8Cf"/>
+                        <outlet property="redLabel" destination="VjM-5I-6V2" id="I6r-8q-TOh"/>
+                        <outlet property="redSlider" destination="oG9-hu-7Vo" id="Bkd-AJ-iWG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
