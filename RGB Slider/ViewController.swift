@@ -30,7 +30,6 @@ class ViewController: UIViewController {
         mainView.layer.cornerRadius = 10
         
         // MARK: Label
-        
         redLabel.text = ""
         greenLabel.text = ""
         blueLabel.text = ""
@@ -48,7 +47,7 @@ class ViewController: UIViewController {
         greenSlider.maximumValue = 255
         greenSlider.minimumTrackTintColor = .green
         //blue
-        blueSlider.value = 0
+        blueSlider.value =  0
         blueSlider.minimumValue = 0
         blueSlider.maximumValue = 255
         blueSlider.minimumTrackTintColor = .blue
