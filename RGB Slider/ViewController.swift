@@ -37,34 +37,26 @@ class ViewController: UIViewController {
         
         // MARK: Slider
         // red
-        redSlider.value = 0
-        redSlider.minimumValue = 0
-        redSlider.maximumValue = 255
+//        redSlider.value = 0
+//        redSlider.minimumValue = 0
+//        redSlider.maximumValue = 255
         redSlider.minimumTrackTintColor = .red
         // green
-        greenSlider.value = 0
-        greenSlider.minimumValue = 0
-        greenSlider.maximumValue = 255
+//        greenSlider.value = 0
+//        greenSlider.minimumValue = 0
+//        greenSlider.maximumValue = 255
         greenSlider.minimumTrackTintColor = .green
         //blue
-        blueSlider.value =  0
-        blueSlider.minimumValue = 0
-        blueSlider.maximumValue = 255
+//        blueSlider.value =  0
+//        blueSlider.minimumValue = 0
+//        blueSlider.maximumValue = 255
         blueSlider.minimumTrackTintColor = .blue
         //Light
-        lightSlider.value = 255
-        lightSlider.minimumValue = 0
-        lightSlider.maximumValue = 255
+//        lightSlider.value = 255
+//        lightSlider.minimumValue = 0
+//        lightSlider.maximumValue = 255
         lightSlider.minimumTrackTintColor = .gray
-        
-        ///mainView = UIColor(red: 0/255, green: 0/255, blue: 65/255, alpha: 1)
-        
-//        var mainViewColor = UIColor(red: CGFloat(redSliderValue), green: CGFloat(greenSliderValue), blue: CGFloat(blueSliderValue), alpha: 1)
-//        mainView = UIView(mainViewColor)
-
-//        mainView.backgroundColor = UIColor(red: CGFloat(redSliderValue), green: CGFloat(greenSliderValue), blue: CGFloat(blueSliderValue), alpha: 1)
-
-        
+             
     }
     // MARK: View Action
     @IBAction func allColor (_ sender: UISlider) {
