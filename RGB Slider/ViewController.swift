@@ -16,10 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet var redLabel: UILabel!
     @IBOutlet var greenLabel: UILabel!
     @IBOutlet var blueLabel: UILabel!
+    @IBOutlet var lightLabel: UILabel!
     // Sliders
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
+    @IBOutlet var lightSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,7 @@ class ViewController: UIViewController {
         redLabel.text = ""
         greenLabel.text = ""
         blueLabel.text = ""
-        
+        lightLabel.text = ""
         
         // MARK: Slider
         // red
@@ -50,6 +52,11 @@ class ViewController: UIViewController {
         blueSlider.minimumValue = 0
         blueSlider.maximumValue = 255
         blueSlider.minimumTrackTintColor = .blue
+        //Light
+        lightSlider.value = 255
+        lightSlider.minimumValue = 0
+        lightSlider.maximumValue = 255
+        lightSlider.minimumTrackTintColor = .gray
         
         ///mainView = UIColor(red: 0/255, green: 0/255, blue: 65/255, alpha: 1)
         
@@ -66,21 +73,33 @@ class ViewController: UIViewController {
         redLabel.text = String(Int(redSlider.value))
         greenLabel.text = String(Int(greenSlider.value))
         blueLabel.text = String(Int(blueSlider.value))
-        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: 1)
+        lightLabel.text = String(Int(lightSlider.value))
+        
+        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: CGFloat(lightSlider.value/255))
     }
     @IBAction func greenSliderViewAction(_ sender: Any) {
         redLabel.text = String(Int(redSlider.value))
         greenLabel.text = String(Int(greenSlider.value))
         blueLabel.text = String(Int(blueSlider.value))
-        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: 1)
+        lightLabel.text = String(Int(lightSlider.value))
+        
+        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: CGFloat(lightSlider.value/255))
     }
     @IBAction func blueSliderViewAction(_ sender: Any) {
         redLabel.text = String(Int(redSlider.value))
         greenLabel.text = String(Int(greenSlider.value))
         blueLabel.text = String(Int(blueSlider.value))
+        lightLabel.text = String(Int(lightSlider.value))
         
-        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: 1)
+        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: CGFloat(lightSlider.value/255))
     }
-
+    @IBAction func lightSliderViewAction(_ sender: Any) {
+        redLabel.text = String(Int(redSlider.value))
+        greenLabel.text = String(Int(greenSlider.value))
+        blueLabel.text = String(Int(blueSlider.value))
+        lightLabel.text = String(Int(lightSlider.value))
+        
+        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value/255), green: CGFloat(greenSlider.value/255), blue: CGFloat(blueSlider.value/255), alpha: CGFloat(lightSlider.value/255))
+    }
 }
 
