@@ -127,7 +127,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         delegate?.didSelectColor(color: mainView.backgroundColor ?? .black)
-//        delegate?didSelectColor(mainView.backgroundColor ?? .white)
         dismiss(animated: true, completion: nil)
     }
 

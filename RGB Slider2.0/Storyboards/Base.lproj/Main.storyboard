@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SA9-mD-BUK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cgy-Ez-toX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -239,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2847" y="0.0"/>
+            <point key="canvasLocation" x="4396" y="-9"/>
         </scene>
         <!--Color View-->
         <scene sceneID="NZ2-Ok-U92">
@@ -254,7 +254,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="change color"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="changeColor" modalPresentationStyle="fullScreen" id="6h5-ru-9hF"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="changeColor" modalPresentationStyle="fullScreen" id="vcC-x2-lFG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -273,25 +273,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KL3-al-Ezl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895.2" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="3556" y="-0.44977511244377816"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="EeE-DG-ber">
+        <scene sceneID="I6i-KS-pKg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SA9-mD-BUK" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cgy-Ez-toX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ta-XF-bDZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bhg-iw-4nR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="36z-fo-V7u" kind="relationship" relationship="rootViewController" id="OCl-VH-2Tu"/>
+                        <segue destination="36z-fo-V7u" kind="relationship" relationship="rootViewController" id="0T0-Iz-D5a"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gnL-6s-lp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0K-6i-gxT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="2729" y="0.0"/>
         </scene>
     </scenes>
     <resources>
