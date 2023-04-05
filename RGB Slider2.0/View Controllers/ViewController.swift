@@ -1,34 +1,37 @@
-//
-//  ViewController.swift
-//  RGB Slider
-//
-//  Created by Viktor Teslenko on 22.02.2023.
-//
-//Сделайте приложение в котором можно менять цвет заливки вью, при помощи слайдеров. Значение каждого слайдера должно отображаться в соответствующем лейбле.Цвет слева от бегунка слайдера должен соответствовать тому цвету, за который он отвечает.
-
 import UIKit
+
+    // MARK: - Protocol
+protocol ColorSelectionDelegate: AnyObject {
+    func didSelectColor(color newColor: UIColor)
+}
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-        // MARK: - View
+    // MARK: - Outlets
+    // View
     @IBOutlet weak var mainView: UIView!
-        // MARK: - Color Labels
+    // Color Labels
     @IBOutlet weak var redLabel: UILabel!
     @IBOutlet weak var greenLabel: UILabel!
     @IBOutlet weak var blueLabel: UILabel!
     @IBOutlet weak var lightLabel: UILabel!
-        // MARK: - Sliders
+    // Sliders
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var lightSlider: UISlider!
-        // MARK: - Text Field
+    // Text Field
     @IBOutlet weak var redTextField: UITextField!
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
     @IBOutlet weak var lightTextField: UITextField!
+    // Buttons
+    @IBOutlet weak var doneButton: UIButton!
+
     
+    weak var delegate: ColorSelectionDelegate?
     
+        // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         lightSlider.minimumTrackTintColor = .gray
     }
     
+        // MARK: - Functions
     // Метод делегата, вызываемый при нажатии на клавишу "Return"
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Скрываем клавиатуру
@@ -62,6 +66,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    //скрывае клавиатуру по тапу
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
@@ -89,39 +94,42 @@ class ViewController: UIViewController, UITextFieldDelegate {
         default:
             break
         }
+            updateTextFields()
+            
+        }
         
         func updateTextFields() {
             redTextField.text = "\(Int(redSlider.value))"
             greenTextField.text = "\(Int(greenSlider.value))"
             blueTextField.text = "\(Int(blueSlider.value))"
             lightTextField.text = "\(Int(lightSlider.value))"
+            
+            updateColor()
         }
-        
-        
-        
-    }
+
     
-    // MARK: View Action
+    func updateColor() {
+        let red = CGFloat(redSlider.value) / 255.0
+        let green = CGFloat(greenSlider.value) / 255.0
+        let blue = CGFloat(blueSlider.value) / 255.0
+        let light = CGFloat(lightSlider.value) / 255.0
+        
+        let newColor = UIColor(red: red, green: green, blue: blue, alpha: light)
+        mainView.backgroundColor = newColor
+        delegate?.didSelectColor(color: newColor)
+    }
+
+    // MARK: - View Action
     @IBAction func allColor (_ sender: UISlider) {
-        redLabel.text = String(Int(redSlider.value))
-        redTextField.text = String(Int(redSlider.value))
-        
-        greenLabel.text = String(Int(greenSlider.value))
-        greenTextField.text = String(Int(greenSlider.value))
-        
-        blueLabel.text = String(Int(blueSlider.value))
-        blueTextField.text = String(Int(blueSlider.value))
-        
-        lightLabel.text = String(Int(lightSlider.value))
-        lightTextField.text = String(Int(lightSlider.value))
-        
-        mainView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value/255),
-            green: CGFloat(greenSlider.value/255),
-            blue: CGFloat(blueSlider.value/255),
-            alpha: CGFloat(lightSlider.value/255))
+        updateTextFields()
     }
     
     
+    @IBAction func doneButtonTapped(_ sender: UIButton) {
+        delegate?.didSelectColor(color: mainView.backgroundColor ?? .black)
+//        delegate?didSelectColor(mainView.backgroundColor ?? .white)
+        dismiss(animated: true, completion: nil)
+    }
+
 }
 

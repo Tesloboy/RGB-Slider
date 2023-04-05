@@ -39,6 +39,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA1F63D929D6E0F8000EF991 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CAFE11C729A5BBE300C2BE0C /* Info.plist */,
+				CAFE11B929A5BBE300C2BE0C /* AppDelegate.swift */,
+				CAFE11BB29A5BBE300C2BE0C /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CA1F63DA29D6E18E000EF991 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA9C98C829CABA85004D58A9 /* ColorView.swift */,
+				CAFE11BD29A5BBE300C2BE0C /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CA1F63DB29D6E1A9000EF991 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				CAFE11C229A5BBE300C2BE0C /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		CA1F63DC29D6E1BC000EF991 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CAFE11BF29A5BBE300C2BE0C /* Main.storyboard */,
+				CAFE11C429A5BBE300C2BE0C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		CAFE11AD29A5BBE300C2BE0C = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +94,10 @@
 		CAFE11B829A5BBE300C2BE0C /* RGB Slider2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				CAFE11B929A5BBE300C2BE0C /* AppDelegate.swift */,
-				CA9C98C829CABA85004D58A9 /* ColorView.swift */,
-				CAFE11BB29A5BBE300C2BE0C /* SceneDelegate.swift */,
-				CAFE11BD29A5BBE300C2BE0C /* ViewController.swift */,
-				CAFE11BF29A5BBE300C2BE0C /* Main.storyboard */,
-				CAFE11C229A5BBE300C2BE0C /* Assets.xcassets */,
-				CAFE11C429A5BBE300C2BE0C /* LaunchScreen.storyboard */,
-				CAFE11C729A5BBE300C2BE0C /* Info.plist */,
+				CA1F63D929D6E0F8000EF991 /* Supporting Files */,
+				CA1F63DA29D6E18E000EF991 /* View Controllers */,
+				CA1F63DC29D6E1BC000EF991 /* Storyboards */,
+				CA1F63DB29D6E1A9000EF991 /* Resourses */,
 			);
 			path = "RGB Slider2.0";
 			sourceTree = "<group>";
@@ -293,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZW9W8KTK4N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "RGB Slider2.0/Info.plist";
+				INFOPLIST_FILE = "RGB Slider2.0/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,7 +354,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZW9W8KTK4N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "RGB Slider2.0/Info.plist";
+				INFOPLIST_FILE = "RGB Slider2.0/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

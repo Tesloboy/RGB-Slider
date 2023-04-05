@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="36z-fo-V7u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SA9-mD-BUK">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -198,6 +198,9 @@
                                 <rect key="frame" x="149" y="552.5" width="77.5" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Готово"/>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Vi-SQ-I9i"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -215,11 +218,13 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Bxt-RB-Yzq"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="blueLabel" destination="a5J-dc-Jdr" id="yAT-Ip-aNH"/>
                         <outlet property="blueSlider" destination="xc2-BI-O6i" id="HgN-gL-h99"/>
                         <outlet property="blueTextField" destination="C6d-pA-BmI" id="Qx7-GC-q5p"/>
+                        <outlet property="doneButton" destination="ITb-sV-fI0" id="o7S-w2-wXl"/>
                         <outlet property="greenLabel" destination="Fb6-W1-dQy" id="WWQ-CU-hmo"/>
                         <outlet property="greenSlider" destination="qmf-6g-aQs" id="c67-EA-wc3"/>
                         <outlet property="greenTextField" destination="Bhw-XN-VV8" id="UtY-I3-2Uq"/>
@@ -234,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="1"/>
+            <point key="canvasLocation" x="2847" y="0.0"/>
         </scene>
         <!--Color View-->
         <scene sceneID="NZ2-Ok-U92">
@@ -249,7 +254,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="change color"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="changeColor" modalPresentationStyle="fullScreen" id="JEd-Ek-dY0"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="changeColor" modalPresentationStyle="fullScreen" id="6h5-ru-9hF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -261,13 +266,32 @@
                             <constraint firstItem="7S0-rx-0zM" firstAttribute="bottom" secondItem="Fqs-Ld-FPZ" secondAttribute="bottom" constant="75" id="acc-3k-Fc5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8Ay-Xx-1J4"/>
                     <connections>
                         <outlet property="changeColorBotton" destination="Fqs-Ld-FPZ" id="Fs4-h4-qUF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KL3-al-Ezl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717" y="1"/>
+            <point key="canvasLocation" x="1895.2" y="-0.44977511244377816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EeE-DG-ber">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SA9-mD-BUK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ta-XF-bDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="36z-fo-V7u" kind="relationship" relationship="rootViewController" id="OCl-VH-2Tu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnL-6s-lp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="-0.44977511244377816"/>
         </scene>
     </scenes>
     <resources>
