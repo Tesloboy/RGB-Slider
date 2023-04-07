@@ -2,7 +2,7 @@ import UIKit
 
     // MARK: - Protocol
 protocol ColorSelectionDelegate: AnyObject {
-    func didSelectColor(color newColor: UIColor)
+    func didSelectColor(_ color: UIColor)
 }
 
 class ViewController: UIViewController, UITextFieldDelegate {
@@ -28,8 +28,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // Buttons
     @IBOutlet weak var doneButton: UIButton!
 
-    
+    //объявим делегат
     weak var delegate: ColorSelectionDelegate?
+    //объявим цвет экрана
+    var mainViewColor: UIColor!
     
         // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -45,16 +47,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         mainView.layer.cornerRadius = 10
         
         // MARK: Label
-        redLabel.text = "0"
-        greenLabel.text = "0"
-        blueLabel.text = "0"
-        lightLabel.text = "255"
+//        redLabel.text = "0"
+//        greenLabel.text = "0"
+//        blueLabel.text = "0"
+//        lightLabel.text = "255"
         
         // MARK: Slider
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
         lightSlider.minimumTrackTintColor = .gray
+        
+        mainView.backgroundColor = mainViewColor
+        
     }
     
         // MARK: - Functions
@@ -95,40 +100,78 @@ class ViewController: UIViewController, UITextFieldDelegate {
             break
         }
             updateTextFields()
-            
+
         }
-        
+
         func updateTextFields() {
             redTextField.text = "\(Int(redSlider.value))"
             greenTextField.text = "\(Int(greenSlider.value))"
             blueTextField.text = "\(Int(blueSlider.value))"
             lightTextField.text = "\(Int(lightSlider.value))"
-            
-            updateColor()
+
+            redLabel.text = "\(Int(redSlider.value))"
+            greenLabel.text = "\(Int(greenSlider.value))"
+            blueLabel.text = "\(Int(blueSlider.value))"
+            lightLabel.text = "\(Int(lightSlider.value))"
+
+            didSelectColor()
         }
 
-    
-    func updateColor() {
-        let red = CGFloat(redSlider.value) / 255.0
-        let green = CGFloat(greenSlider.value) / 255.0
-        let blue = CGFloat(blueSlider.value) / 255.0
-        let light = CGFloat(lightSlider.value) / 255.0
-        
-        let newColor = UIColor(red: red, green: green, blue: blue, alpha: light)
-        mainView.backgroundColor = newColor
-        delegate?.didSelectColor(color: newColor)
+
+    private func didSelectColor() {
+
+        mainView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value) / 255.0,
+            green: CGFloat(greenSlider.value) / 255.0,
+            blue: CGFloat(blueSlider.value) / 255.0,
+            alpha: CGFloat(lightSlider.value) / 255.0)
+
     }
+    
 
     // MARK: - View Action
     @IBAction func allColor (_ sender: UISlider) {
         updateTextFields()
     }
     
-    
+    //Добавим кнопку 'done' и добавим в нее МЕТОД ДЕЛЕГАТА 'didSelectColor'
     @IBAction func doneButtonTapped(_ sender: UIButton) {
-        delegate?.didSelectColor(color: mainView.backgroundColor ?? .black)
+        delegate?.didSelectColor(mainView.backgroundColor ?? .white)
         dismiss(animated: true, completion: nil)
     }
 
 }
 
+    // MARK: - Alert
+extension ViewController {
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        guard let text = textField.text else { return }
+        if let currentValue = Float(text), currentValue <= 255 {
+            switch textField.tag {
+            case 0:
+                redSlider.setValue(currentValue, animated: true)
+            case 1:
+                greenSlider.setValue(currentValue, animated: true)
+            case 2:
+                blueSlider.setValue(currentValue, animated: true)
+            case 3:
+                lightSlider.setValue(currentValue, animated: true)
+            default: break
+            }
+            
+            didSelectColor()
+            return
+        }
+        
+      showAlert(title: "Wrong format!", message: "Please enter correct value")
+    }
+}
